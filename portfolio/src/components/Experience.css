@@ -1,0 +1,154 @@
+.experience {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 5rem 1.5rem;
+}
+
+.experience__timeline {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.experience__timeline::before {
+  content: '';
+  position: absolute;
+  left: 19px;
+  top: 10px;
+  bottom: 10px;
+  width: 2px;
+  background: linear-gradient(180deg, #7c3aed, #22d3ee, transparent);
+}
+
+.timeline__item {
+  display: flex;
+  gap: 1.4rem;
+  margin-bottom: 1.6rem;
+}
+
+.timeline__marker {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  background: linear-gradient(135deg, #7c3aed, #22d3ee);
+  box-shadow: 0 8px 24px rgba(124, 58, 237, 0.4);
+  z-index: 1;
+}
+
+.timeline__content {
+  flex: 1;
+  padding: 1.3rem 1.5rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: rgba(255, 255, 255, 0.02);
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.timeline__content:hover {
+  border-color: rgba(124, 58, 237, 0.35);
+  transform: translateX(4px);
+}
+
+.timeline__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.timeline__head h4 {
+  font-family: 'Space Grotesk', sans-serif;
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.timeline__period {
+  color: #22d3ee;
+  font-size: 0.82rem;
+  white-space: nowrap;
+}
+
+.timeline__org {
+  color: var(--muted);
+  font-size: 0.88rem;
+  margin: 0.3rem 0 0.8rem;
+}
+
+.timeline__org span {
+  opacity: 0.7;
+}
+
+.timeline__content ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.timeline__content li {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.education {
+  margin-top: 1rem;
+}
+
+.education__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.education__head h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.education__grade {
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #22d3ee;
+  border: 1px solid rgba(34, 211, 238, 0.4);
+}
+
+.education__school {
+  color: var(--text-dim);
+  margin-top: 0.5rem;
+  font-weight: 500;
+}
+
+.education__meta {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin: 0.2rem 0 1rem;
+}
+
+.education__focus,
+.education__activities {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin: 0.4rem 0 0;
+}
+
+.education strong {
+  color: var(--text-dim);
+}
+
+@media (max-width: 600px) {
+  .timeline__item {
+    gap: 1rem;
+  }
+}

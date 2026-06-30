@@ -1,0 +1,125 @@
+.about {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 5rem 1.5rem;
+}
+
+.about__grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.about__bio p {
+  color: var(--muted);
+  line-height: 1.8;
+  margin: 0 0 1.2rem;
+}
+
+.about__stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.about__stat {
+  padding: 1.2rem 1.3rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.about__stat-num {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #7c3aed, #22d3ee);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.about__stat-label {
+  color: var(--muted);
+  font-size: 0.82rem;
+  margin-top: 0.3rem;
+}
+
+.about__focus {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.about__focus-card {
+  padding: 1.4rem 1.5rem;
+  border-radius: 18px;
+}
+
+.about__focus-card h4 {
+  font-family: 'Space Grotesk', sans-serif;
+  margin: 0 0 0.5rem;
+  font-size: 1.05rem;
+}
+
+.about__focus-card p {
+  color: var(--muted);
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.about__highlights {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+.about__highlight {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 1.1rem 1.2rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: linear-gradient(180deg, rgba(124, 58, 237, 0.08), rgba(255, 255, 255, 0));
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.about__highlight:hover {
+  transform: translateY(-4px);
+  border-color: rgba(124, 58, 237, 0.4);
+}
+
+.about__highlight-icon {
+  font-size: 1.6rem;
+}
+
+.about__highlight-title {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.about__highlight-sub {
+  color: var(--muted);
+  font-size: 0.78rem;
+  margin-top: 0.15rem;
+}
+
+@media (max-width: 920px) {
+  .about__grid {
+    grid-template-columns: 1fr;
+  }
+  .about__highlights {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 540px) {
+  .about__highlights {
+    grid-template-columns: 1fr;
+  }
+}

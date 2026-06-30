@@ -1,0 +1,103 @@
+.orbit-stage {
+  position: relative;
+  width: 100%;
+  min-height: 560px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.orbit-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  animation-name: orbit-spin;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes orbit-spin {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.orbit-tile {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  will-change: transform;
+}
+
+.orbit-tile-inner {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  font-size: 28px;
+  border-radius: 14px;
+  background: rgba(20, 18, 30, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(6px);
+  animation-name: orbit-spin-counter;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.orbit-tile-inner:hover {
+  border-color: rgba(124, 58, 237, 0.6);
+  box-shadow: 0 10px 40px rgba(124, 58, 237, 0.4);
+}
+
+.orbit-tile-inner span {
+  display: inline-flex;
+  transition: transform 0.3s ease;
+}
+
+.orbit-tile-inner:hover span {
+  transform: scale(1.22);
+}
+
+@keyframes orbit-spin-counter {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.orbit-center {
+  position: relative;
+  z-index: 5;
+  width: min(440px, 86%);
+  padding: 2.4rem 2rem;
+  border-radius: 24px;
+  text-align: center;
+  background: radial-gradient(120% 120% at 50% 0%, rgba(30, 27, 45, 0.92), rgba(11, 10, 18, 0.92));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(14px);
+}
+
+@media (max-width: 768px) {
+  .orbit-stage {
+    min-height: 480px;
+    transform: scale(0.78);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .orbit-ring,
+  .orbit-tile-inner {
+    animation: none !important;
+  }
+}
